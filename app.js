@@ -35,6 +35,7 @@ CellContainer.prototype.render = function($parent) {
     cellRow.forEach(function(cell) {
       cell.render($row);
     });
+    $('<div/>').addClass('clearfix').appendTo($row);
     $row.appendTo($parent);
   });
 };

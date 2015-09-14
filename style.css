@@ -1,0 +1,26 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+#board div {
+  float: left;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.row {
+  width: 100%;
+}
+
+.cell {
+  width: 20%;
+  color: #333;
+}
+
+.cell.marked {
+  background-color: #ccc;
+  color: #555;
+}
