@@ -21,6 +21,7 @@ html, body {
   color: #333;
   text-align: center;
   padding: 1em 0 1em 0;
+  height: 3em;
 }
 
 .cell.marked {
