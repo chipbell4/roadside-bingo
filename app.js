@@ -117,6 +117,21 @@ var objects = [
   },
 ];
 
+var chooseBoard = function() {
+  var shuffled = _.shuffle(objects);
+
+  var board = [];
+  for(var i = 0; i < 5; i++) {
+    var row = [];
+    for(var j = 0; j < 5; j++) {
+      row.push(shuffled[i * 5 + j]);
+    }
+    board.push(row);
+  }
+
+  return board;
+};
+
 $(function() {
-  new CellContainer([[]]).render($('#board'));
+  new CellContainer(chooseBoard()).render($('#board'));
 });
