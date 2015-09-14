@@ -140,6 +140,11 @@ var chooseBoard = function() {
   return board;
 };
 
-$(function() {
+var refresh = function() {
   new CellContainer(chooseBoard()).render($('#board'));
+}
+
+$(function() {
+  $('#reset').on('click', refresh);
+  refresh();
 });
