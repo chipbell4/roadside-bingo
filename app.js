@@ -5,6 +5,10 @@ var Cell = function(object) {
 
   this.$el.on('click', function() {
     this.marked = !this.marked;
+    this.$el.removeClass('marked');
+    if(this.marked) {
+      this.$el.addClass('marked');
+    }
   }.bind(this));
 };
 
