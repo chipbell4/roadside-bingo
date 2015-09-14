@@ -39,6 +39,84 @@ CellContainer.prototype.render = function($parent) {
   });
 };
 
+var objects = [
+  {
+    name: 'Fire Hydrant',
+  },
+  {
+    name: 'Stop Sign',
+  },
+  {
+    name: 'Policeman',
+  },
+  {
+    name: 'Motorcycle',
+  },
+  {
+    name: 'Tree',
+  },
+  {
+    name: 'Firetruck',
+  },
+  {
+    name: 'Ambulance',
+  },
+  {
+    name: 'McDonald\'s',
+  },
+  {
+    name: 'Airplane',
+  },
+  {
+    name: 'Red Car',
+  },
+  {
+    name: 'Yellow Light',
+  },
+  {
+    name: 'Dog',
+  },
+  {
+    name: 'A School',
+  },
+  {
+    name: 'Swimming Pool',
+  },
+  {
+    name: 'Hospital',
+  },
+  {
+    name: 'Grocery Store',
+  },
+  {
+    name: 'Construction Worker',
+  },
+  {
+    name: 'Crane',
+  },
+  {
+    name: '18-Wheeler',
+  },
+  {
+    name: 'Bridge',
+  },
+  {
+    name: 'House',
+  },
+  {
+    name: 'Blue Car',
+  },
+  {
+    name: 'Crane',
+  },
+  {
+    name: 'Dump Truck',
+  },
+  {
+    name: 'Helicopter',
+  },
+];
+
 $(function() {
   new CellContainer([[]]).render($('#board'));
 });
