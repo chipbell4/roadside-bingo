@@ -120,6 +120,9 @@ var objects = [
   {
     name: 'Helicopter',
   },
+  {
+    name: 'Sewer Cover',
+  }
 ];
 
 var chooseBoard = function() {
