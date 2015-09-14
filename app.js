@@ -40,5 +40,5 @@ CellContainer.prototype.render = function($parent) {
 };
 
 $(function() {
-  new CellContainer($('#board')).render();
+  new CellContainer([[]]).render($('#board'));
 });
