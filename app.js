@@ -67,13 +67,13 @@ var objects = [
     name: 'Ambulance',
   },
   {
-    name: 'McDonald\'s',
+    name: 'Fast Food',
   },
   {
     name: 'Airplane',
   },
   {
-    name: 'Red Car',
+    name: 'Yellow Car',
   },
   {
     name: 'Yellow Light',
@@ -100,7 +100,7 @@ var objects = [
     name: 'Crane',
   },
   {
-    name: '18-Wheeler',
+    name: 'Delivery Truck',
   },
   {
     name: 'Bridge',
@@ -109,7 +109,7 @@ var objects = [
     name: 'House',
   },
   {
-    name: 'Blue Car',
+    name: 'Green Car',
   },
   {
     name: 'Crane',
@@ -122,8 +122,96 @@ var objects = [
   },
   {
     name: 'Sewer Cover',
-  }
+  },
+  {
+    name: 'Gas Station',
+  },
+  {
+    name: 'Speed Limit Sign',
+  },
+  {
+    name: 'Church',
+  },
+  {
+    name: 'Yield Sign',
+  },
+  {
+    name: 'Playground',
+  },
+  {
+    name: 'Skyscraper',
+  },
+  {
+    name: 'Flag Pole'
+  },
+  {
+    name: 'Post Office',
+  },
+  {
+    name: 'Library',
+  },
+  {
+    name: 'Fence',
+  },
+  {
+    name: 'Park',
+  },
+  {
+    name: 'Fountain',
+  },
+  {
+    name: 'Statue'
+  },
+  {
+    name: 'Coffee Shop'
+  },
+  {
+    name: 'Rainbow'
+  },
+  {
+    name: 'Train',
+  },
+  {
+    name: 'Boat'
+  },
+  {
+    name: 'River'
+  },
 ];
+
+var correctBoards = [
+  // rows
+  [ 0,  1,  2,  3, 4],
+  [ 5,  6,  7,  8, 9],
+  [10, 11, 12, 13, 14],
+  [15, 16, 17, 18, 19],
+  [20, 21, 22, 23, 24],
+
+  // columns
+  [0, 5, 10, 15, 20],
+  [1, 6, 11, 16, 21],
+  [2, 7, 12, 17, 22],
+  [3, 8, 13, 18, 23],
+  [4, 9, 14, 19, 24],
+
+  // diagonals
+  [0, 6, 12, 18, 24],
+  [20, 16, 12, 8, 4]
+];
+
+var missingBoardPieces = function(configuration) {
+  var buildSelector = function(row, column) {
+    return '.row:nth-child(' + (row + 1) + ') > .cell:nth-child(' + (column + 1) + ')'; 
+  };
+
+  configuration.map(function(index) {
+    var row = Math.floor(index / 5);
+    var column = index % 5;
+    return $(buildSelector(row, column));
+  }).filter(function($el) {
+    return !$el.hasClass('marked');
+  });
+};
 
 var chooseBoard = function() {
   var shuffled = _.shuffle(objects);
@@ -144,7 +232,19 @@ var refresh = function() {
   new CellContainer(chooseBoard()).render($('#board'));
 }
 
+var totalSeconds = 0;
+var formatSeconds = function() {
+  var minutes = Math.floor(totalSeconds / 60);
+  var seconds = totalSeconds % 60;
+  return minutes + ':' + seconds;
+};
+var drawSeconds = function() {
+  $('#timer').html(formatSeconds());
+  totalSeconds++;
+}
+
 $(function() {
   $('#reset').on('click', refresh);
   refresh();
+  setInterval(drawSeconds, 1000);
 });
