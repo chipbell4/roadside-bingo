@@ -27,6 +27,11 @@ h1, .timer-container {
   text-align: center;
   padding: 1em 0 1em 0;
   height: 3em;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .cell.marked {
