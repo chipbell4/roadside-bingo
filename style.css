@@ -3,10 +3,23 @@ html, body {
   margin: 0;
   font-size: 26px;
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  background-image: url('http://www.motorcycleclassics.com/~/media/Images/MCC/Editorial/Articles/Magazine%20Articles/2012/07-01/Destinations%20The%20Extraterrestrial%20Highway/Extra%20Terrestrial%20Highway.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
 }
 
 h1, .timer-container {
   text-align: center;
+  font-family: 'Candal', 'Arial', sans-serif;
 }
 
 #board div {
@@ -27,14 +40,9 @@ h1, .timer-container {
   text-align: center;
   padding: 1em 0 1em 0;
   height: 3em;
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .cell.marked {
-  background-color: #ccc;
+  background-color: #ccc; /* #A3E8AB */
   color: #555;
 }
