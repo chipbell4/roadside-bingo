@@ -230,6 +230,8 @@ var chooseBoard = function() {
 
 var refresh = function() {
   new CellContainer(chooseBoard()).render($('#board'));
+  var audio = new Audio('horn.mp3');
+  audio.play();
 }
 
 var totalSeconds = 0;
