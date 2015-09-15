@@ -22,6 +22,12 @@ h1, .timer-container {
   font-family: 'Candal', 'Arial', sans-serif;
 }
 
+#reset {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
 #board div {
   float: left;
 }
@@ -37,12 +43,13 @@ h1, .timer-container {
 .cell {
   width: 20%;
   color: #333;
+  background-color: rgba(255, 255, 255, 1);
   text-align: center;
   padding: 1em 0 1em 0;
   height: 3em;
 }
 
 .cell.marked {
-  background-color: #ccc; /* #A3E8AB */
-  color: #555;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #eee;
 }
