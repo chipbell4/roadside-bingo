@@ -24,8 +24,9 @@ h1, .timer-container {
 
 #reset {
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 5%;
+  left: 5%;
+  font-size: 30px;
 }
 
 #board div {
