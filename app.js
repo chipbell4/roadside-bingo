@@ -228,8 +228,13 @@ var chooseBoard = function() {
   return board;
 };
 
-var refresh = function() {
+var refresh = function(dontMakeNoise) {
   new CellContainer(chooseBoard()).render($('#board'));
+
+  if(dontMakeNoise) {
+    return;
+  }
+
   var audio = new Audio('horn.mp3');
   audio.play();
 }
@@ -246,7 +251,9 @@ var drawSeconds = function() {
 }
 
 $(function() {
-  $('#reset').on('click', refresh);
-  refresh();
+  $('#reset').on('click', function() {
+    refresh();
+  });
+  refresh(true);
   setInterval(drawSeconds, 1000);
 });
